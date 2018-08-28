@@ -13,7 +13,7 @@ Some of the API calls use libraries that are useful in the Alexa interaction. Fo
 - [json2csv](https://www.npmjs.com/package/json2csv)
 - [node-zip](https://www.npmjs.com/package/node-zip)
 - [word-to-number-node](https://www.npmjs.com/package/word-to-number-node)
-
+- [xml2js](https://www.npmjs.com/package/xml2js)
 
 ## Installation
 
@@ -28,6 +28,15 @@ Some of the API calls use libraries that are useful in the Alexa interaction. Fo
   - Compress or zip the s1_otbiccs folder
 
 4) Update the chatbot with the secret key and backend id of the mobile backend.
+
+## APIs Used by Backend Code
+All of the backend code for the interactions use soap web services. The various API's used for the interactions are as follows:
+- Supplier Balances: [executeSqlQuery](https://docs.oracle.com/cd/E14571_01/bi.1111/e16364/methods.htm#BIEIT342)
+- GL Balances: [executeSqlQuery](https://docs.oracle.com/cd/E14571_01/bi.1111/e16364/methods.htm#BIEIT342)
+- Budget Surplus: [executeSqlQuery](https://docs.oracle.com/cd/E14571_01/bi.1111/e16364/methods.htm#BIEIT342)
+- Budget Transfer: [importBulkData](https://docs.oracle.com/en/cloud/saas/financials/18b/oeswf/ERP-Integration-Service-ErpIntegrationService-svc-9.html)
+- Emailing Briefing Book: [executeIBotNOW](https://docs.oracle.com/cd/E14571_01/bi.1111/e16364/methods.htm#BIEIT1106)
+
 
 ## How to use this chatbot
 
