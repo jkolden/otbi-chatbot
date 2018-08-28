@@ -26,7 +26,19 @@ Some of the API calls use libraries that are useful in the Alexa interaction. Fo
 
 This chatbot allows the user to query a few different OTBI reports. The following is an overview of each report and the interactions allowed:
 
+### Supplier Balances
+This bot interaction queries an OTBI report of open accounts payable balances. In order to keep the list of suppliers brief for an improved Alexa experience we only included three (3) suppliers in the entity definition:
+  - United Parcel Service
+  - Staples
+  - Office Depot
 
+#### Sample utterances for supplier balances:
+- How much do we owe [UPS]? [Staples, Office Depot]
+- How much do we owe our suppliers?
+  - user will be prompted with an LOV to choose from
+
+#### Sample response for supplier balances:
+- We owe Office Depot a balance of $16,627,861.00
 
 
 
