@@ -65,6 +65,38 @@ This interaction queries a report that displays the excess of budget amounts ove
 #### Sample response for budget surplus:
 - Commisions has the largest budget surplus:  $1,481,132.00
 
+### Budget Transfer
+This interaction allows the user to initiate a budget transfer using the SOAP API importBulkData. This is the web service version of the File-Based Data Import that allows for transaction upload via excel spreadsheet.
+
+#### Sample utterances for budget transfer:
+- User: Transfer budget from salaries to cleaning
+  Bot: How much do you want to transfer
+  User: 9,000 [spoken: nine thousand]
+
+#### Sample response for budget transfer:
+- Ok, I've initiated that budget transfer to ucf3-ectz.  The transfer will be finalized when the budget manager submits the Validate and Upload  Budgets process.
+
+At this point the user can navigate to the Submit and Monitor Requests page of their instance and track the ESS Job Id's for the transfer.
+
+### Emailing Briefing Book
+This interaction allows the user lauch an OTBI "agent" that emails a package of documents to a list of users. The OTBI agent is included in this folder and should be uploaded to each instance prior to the demo (if the user wishes to demo this interaction).
+
+#### Sample utterances for budget transfer:
+- User: Transfer budget from salaries to cleaning
+  Bot: How much do you want to transfer
+  User: 9,000 [spoken: nine thousand]
+
+#### Sample response for budget transfer:
+- Ok, I've initiated that budget transfer to ucf3-ectz.  The transfer will be finalized when the budget manager submits the Validate and Upload  Budgets process.
+
+At this point the user can navigate to the Submit and Monitor Requests page of their instance and track the ESS Job Id's for the transfer.
+
+
+
+
+
+
+
 
 
 
