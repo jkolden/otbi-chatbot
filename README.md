@@ -6,7 +6,9 @@
 - `s1_otbiccs` contains the API source code
 
 ## Dependencies
-Some of the API calls use libraries that are useful in the Alexa interaction. For example we use libraries that convert spoken words to numbers that can be used in the spreadsheet budget upload. All of the depencies are listed in the Package.json file.
+Some of the API calls use libraries that are useful in the Alexa interaction. For example we use libraries that convert spoken words to numbers that can be used in the spreadsheet budget upload. All of the depencies are listed in the Package.json file:
+
+    - [soap](https://www.npmjs.com/package/soap)
 
 ## Installation
 
