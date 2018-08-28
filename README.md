@@ -40,5 +40,36 @@ This bot interaction queries an OTBI report of open accounts payable balances. I
 #### Sample response for supplier balances:
 - We owe Office Depot a balance of $16,627,861.00
 
+### General Ledger Balances
+This bot interaction queries an OTBI report of general ledger budget vs actual amounts for FY17. The code should probably be updated to reflect FY18 balances depending on whether this interaction will be used going forward. Again for simplicity, we only include a few accouts in the entity definition:
+ - Airfare
+ - Office Rent
+ - Electricity / Water
+ - Cleaning
+ - Salaries
+
+#### Sample utterances for general ledger balances:
+- What is the account balance for Cleaning? [Salaries, Electricity, etc.]
+- What is our budget vs actual?
+  - user will be prompted with an LOV to choose from
+
+#### Sample response for general ledger balances:
+- The budget amount for Cleaning is $1,180,000.00  and the actual amount spent is $1,187,772.00
+
+### Budget Surplus
+This interaction queries a report that displays the excess of budget amounts over actual amounts for a range of accounts. The API code then retrieves the first record in the array response sorted by budget surplus in descending order.
+
+#### Sample utterances for budget surplus:
+- Which account has the largest budget surplus
+
+#### Sample response for budget surplus:
+- Commisions has the largest budget surplus:  $1,481,132.00
+
+
+
+
+
+
+
 
 
