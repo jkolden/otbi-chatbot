@@ -4,6 +4,8 @@
 - `package-s1_otbi.zip` contains the exported package from MCS, including the mobile backend and the API code.
 - `OTBIBotGSE.zip` contains the exported chatbot YAML
 - `s1_otbiccs` contains the API source code
+- `My Briefing Book Agent.catalog` is the OTBI briefing book which can be loaded to each instance that supports this flow. This will allow SE's to use the Briefing Book interaction described below.
+- `Payables Balance by Customer.catalog` is an OTBI archive that supports the Supplier Balance interaction. This is not required to be on the actual instance but rather is provided in the event that the SE wants to show real time data for one of the interactions. Note that this archive should probably be renamed as it contains supplier balances and not customer balances.
 
 ## Dependencies
 Some of the API calls use libraries that are useful in the Alexa interaction. For example we use libraries that convert spoken words to numbers that can be used in the spreadsheet budget upload. All of the depencies are listed in the Package.json file:
