@@ -1,0 +1,14 @@
+#%RAML 0.8
+title: s1_otbiccs
+version: 1.0
+baseUri: /mobile/custom/s1_otbiccs
+protocols: [HTTPS]
+/component:
+  get:
+    protocols: [HTTPS]
+  /{componentName}:
+    uriParameters:
+      componentName:
+        displayName: componentName
+        type: string
+    post:

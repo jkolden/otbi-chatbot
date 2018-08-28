@@ -1,0 +1,31 @@
+
+{
+    "apiName":"s1_otbiccs",
+    "apiVersion":"1.0",
+    "apiId":"c7a07d02-4c19-48dd-9395-d0057e86f0be",
+    "baseUrl":"http://<MCS_SERVER>:<MCS_PORT>/",
+    "authorization":{
+        "mobileBackendID":"<YOUR_MOBILE_BACKEND_ID>",
+        "mobileBackendName":"<YOUR_MOBILE_BACKEND_NAME>",
+        "mobileBackendVersion":"<YOUR_MOBILE_BACKEND_VERSION>",
+        "anonymousKey":"<MBE_ANONYMOUS_KEY>",
+        "oauth":{
+            "tokenEndpoint":"<MBE_OAUTH_TOKEN_ENDPOINT>",
+            "clientId":"<MBE_OAUTH_CLIENT_ID>",
+            "clientSecret":"<MBE_OAUTH_CLIENT_ID>"
+        }
+    },
+    "container":{
+        "oracleMobileApiName":"OracleMobileAPI",
+        "port":4000
+    },
+    "deploy":{
+        "tempDirectory":"/tmp/mcs-deploy"
+    },
+    "tests":{
+        "getComponent":{
+            "method":"GET",
+            "resource":"/component"
+        }
+    }
+}

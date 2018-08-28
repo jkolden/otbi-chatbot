@@ -1,0 +1,16 @@
+{
+  "name": "s1_otbiccs",
+  "version": "17.4.3",
+  "description": "section one otbi bot custom component service",
+  "main": "s1_otbiccs.js",
+  "dependencies": {
+    "joi": "^9.2.0",
+    "log4js": "^1.1.1",
+    "xml2js": "^0.4.19",
+    "soap": "^0.23.0",
+    "strong-soap": "^1.4.0",
+    "json2csv": "^3.11.5",
+    "node-zip": "^1.1.1",
+    "word-to-number-node": "^1.0.3"
+  }
+}
