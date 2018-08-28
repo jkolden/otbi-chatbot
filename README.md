@@ -79,17 +79,17 @@ This interaction allows the user to initiate a budget transfer using the SOAP AP
 At this point the user can navigate to the Submit and Monitor Requests page of their instance and track the ESS Job Id's for the transfer.
 
 ### Emailing Briefing Book
-This interaction allows the user lauch an OTBI "agent" that emails a package of documents to a list of users. The OTBI agent is included in this folder and should be uploaded to each instance prior to the demo (if the user wishes to demo this interaction).
+This interaction allows the user lauch an OTBI "agent" that emails a package of documents to a list of users. The OTBI agent is included in this folder and should be uploaded to each instance prior to the demo (if the user wishes to demo this interaction). The package is included in the repo with the name `My Briefing Book Agent.catalog` and it should be unarchived as user BIADMIN in the folder directory `Shared Folders/Custom` of the SE's cloud instance.
 
-#### Sample utterances for budget transfer:
-- User: Transfer budget from salaries to cleaning
-  Bot: How much do you want to transfer
-  User: 9,000 [spoken: nine thousand]
+#### Sample utterances for briefing book:
+- Email briefing book to my colleagues
+- Email these reports to my team
+- Send these reports to my team
 
-#### Sample response for budget transfer:
-- Ok, I've initiated that budget transfer to ucf3-ectz.  The transfer will be finalized when the budget manager submits the Validate and Upload  Budgets process.
+#### Sample response for briefing book:
+- Ok, the reports have been sent.
 
-At this point the user can navigate to the Submit and Monitor Requests page of their instance and track the ESS Job Id's for the transfer.
+At this point the user can navigate to email client for casey.brown to retrieve the emailed package of reports.
 
 
 
