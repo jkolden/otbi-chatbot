@@ -1,5 +1,8 @@
 # otbi-chatbot
 
+## Background
+This is the code for a chatbot that communicates with Oracle's Cloud ERP environments. The main intent is to show how chatbots can communicate with OTBI reports but there are also supported interactions for creating File-Based Imports as well as executing OTBI iBots. This demo was originally built for the Gartner Magic Quadrant demo in February, 2018, and has since been demonstrated over 600 times by Oracle's sales engineers around the globe. The main communication channel is Amazon's Alexa device though the bot might also be demonstrated using Facebook Messenger.
+
 ## Included in this repository:
 - `package-s1_otbi.zip` contains the exported package from MCS, including the mobile backend and the API code.
 - `OTBIBotGSE.zip` contains the exported chatbot YAML
@@ -39,10 +42,26 @@ All of the backend code for the interactions use soap web services. The various 
 - Budget Transfer: [importBulkData](https://docs.oracle.com/en/cloud/saas/financials/18b/oeswf/ERP-Integration-Service-ErpIntegrationService-svc-9.html)
 - Emailing Briefing Book: [executeIBotNOW](https://docs.oracle.com/cd/E14571_01/bi.1111/e16364/methods.htm#BIEIT1106)
 
+## Authentication
+- All of the APIs use basic authentication with casey.brown as the user.
+- The OTBI API's use a method (executeSQLQuery) that requires a valid sessionId be passed in the payload. For this reason, the first command issued to the bot must be `Log me on`. This runs the [logon](https://docs.oracle.com/cd/E14571_01/bi.1111/e16364/methods.htm#BIEIT254) method that returns a sessionId. The bot saves this for the duration of the session and passes it as a parameter to each subsequent OTBI API call. After the interactions are complete, the user can use the utterance `log me off` which executes the [logoff](https://docs.oracle.com/cd/E14571_01/bi.1111/e16364/methods.htm#BIEIT252) method which revokes the sessionId.
+- The chatbot YAML includes the instance and password that the API code will point to and the instance is passed in every interaction as an input parameter. We have typically hardcoded this to a single instance but if this bot will be used more frequently there is likely a better approach. For example, in prior versions we created a simple ords-enabled apex app that users could access to enter their chosen instance and password. They would be given a short id number and then they could pass this id to the bot during the logon process and the API code would look up that id and store the associated instance and password.
+
 
 ## How to use this chatbot
 
-This chatbot allows the user to query a few different OTBI reports. The following is an overview of each report and the interactions allowed:
+This chatbot allows the user to query a few different OTBI reports. The following is an overview of each report and the interactions allowed.
+
+For all OTBI interactions the user **must** first issue a logon command so that the bot can have a valid OTBI sessionId to pass to subsequent interactions.
+
+### Logon
+This bot interaction executes the OTBI logon method to retrieve a valid OTBI sessionId. This is stored as a user variable and passed to subsequent interactions.
+
+#### Sample utterances for logon:
+- Log me on
+
+#### Sample response for logon:
+- Ok I've logged you on
 
 ### Supplier Balances
 This bot interaction queries an OTBI report of open accounts payable balances. In order to keep the list of suppliers brief for an improved Alexa experience we only included three (3) suppliers in the entity definition:
@@ -105,9 +124,18 @@ This interaction allows the user lauch an OTBI "agent" that emails a package of 
 - Send these reports to my team
 
 #### Sample response for briefing book:
-- Ok, the reports have been sent.
+- Ok, the reports have been sent
 
 At this point the user can navigate to email client for casey.brown to retrieve the emailed package of reports.
+
+### Logoff
+This bot interaction executes the OTBI logoff method to end the OTBI session.
+
+#### Sample utterances for logoff:
+- Log me off
+
+#### Sample response for logon:
+- Ok your session has been ended
 
 
 
